@@ -89,10 +89,8 @@ public class Navigation implements Serializable {
             Class<? extends View> viewClass = newPath.get(i);
             temp.add(viewClass);
             if (currentPath == null ||
-                    (currentPath != null &&
-                            currentPath.size() > i &&
-                            viewClass != currentPath.get(i) &&
-                            i != newPath.size() - 1)) {
+                    (currentPath != null && currentPath.size() > i && viewClass != currentPath.get(i) && i != newPath.size() - 1)
+                    ) {
                 ArrayList<Class<? extends View>> temp2 = new ArrayList<>(temp);
                 for (int n = i + 1; n < newPath.size(); n++) {
                     Class<? extends View>[] newTemp = new Class[i + 1];

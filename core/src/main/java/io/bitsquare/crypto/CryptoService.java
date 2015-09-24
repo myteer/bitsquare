@@ -216,13 +216,13 @@ public class CryptoService<T> {
 
     public String signMessage(ECKey key, String message) {
         byte[] data = Utils.formatMessageForSigning(message);
-        Sha256Hash hash = Sha256Hash.hashTwice(data);
+        Sha256Hash hash = Sha256Hash.wrap(Sha256Hash.hashTwice(data));
         return signMessage(key, hash);
     }
 
     public Sha256Hash hash(String message) {
         byte[] data = Utils.formatMessageForSigning(message);
-        return Sha256Hash.hashTwice(data);
+        return Sha256Hash.wrap(Sha256Hash.hashTwice(data));
     }
 }
 
